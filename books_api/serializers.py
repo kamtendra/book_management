@@ -33,3 +33,14 @@ class BookSerializer(serializers.ModelSerializer):
             if not isinstance(value, int) or value <= 0:
                 raise serializers.ValidationError("Publication year must be a positive integer.")
             return value
+        
+class PaginatedBookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Book
+        fields = '__all__'
+
+class CustomPageNumberPaginationSerializer(serializers.Serializer):
+    count = serializers.IntegerField()
+    next = serializers.CharField(allow_null=True)
+    previous = serializers.CharField(allow_null=True)
+    results = PaginatedBookSerializer(many=True)       

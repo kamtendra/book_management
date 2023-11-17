@@ -5,13 +5,17 @@ from .serializers import BookSerializer
 from rest_framework import filters
 from rest_framework.pagination import PageNumberPagination
 
+class CustomPageNumberPagination(PageNumberPagination):
+    page_size_query_param = 'page_size'
+    max_page_size = 10
+
 class BookList(generics.ListCreateAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
     search_fields = ['title', 'author']
     ordering_fields = ['title', 'author', 'publication_year']
-    pagination_class = PageNumberPagination
+    pagination_class = CustomPageNumberPagination
 
 class BookDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Book.objects.all()
