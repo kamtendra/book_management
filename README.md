@@ -60,8 +60,15 @@ This is a Django project using Django Rest Framework for building a RESTful API.
 
 8. **Access the API documentation:**
 
-    - Open your browser and go to `http://127.0.0.1:8000/api/docs/` for Django Rest Framework documentation.
+    - Open your browser and go to `http://127.0.0.1:8000/api/` for Django Rest Framework documentation.
+      <br>
+
+      ![API-doc](media/images/API-doc.png)
+
     - For Swagger/OpenAPI documentation, visit `http://127.0.0.1:8000/api/swagger/`.
+     <br>
+
+      ![Swagger-API-doc](media/images/Swagger-API-image.png)
 
 ## Environment Variables
 
