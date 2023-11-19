@@ -68,7 +68,7 @@ This is a Django project using Django Rest Framework for building a RESTful API.
     - For Swagger/OpenAPI documentation, visit `http://127.0.0.1:8000/api/swagger/`.
      <br>
 
-      ![Swagger-API-doc](media/images/Swagger-API-image.png)
+      ![Swagger-API-doc](media/images/Swagger-API-Image.png)
 
 ## Environment Variables
 
