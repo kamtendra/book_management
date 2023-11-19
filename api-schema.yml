@@ -1,0 +1,91 @@
+info:
+  description: ''
+  title: ''
+  version: ''
+openapi: 3.0.0
+paths:
+  /api/books/:
+    get:
+      operationId: books_list
+      parameters:
+      - in: query
+        name: page
+        schema:
+          description: A page number within the paginated result set.
+          title: Page
+          type: integer
+      - in: query
+        name: page_size
+        schema:
+          description: Number of results to return per page.
+          title: Page size
+          type: integer
+      - in: query
+        name: search
+        schema:
+          description: A search term.
+          title: Search
+          type: string
+      - in: query
+        name: ordering
+        schema:
+          description: Which field to use when ordering the results.
+          title: Ordering
+          type: string
+      tags:
+      - books
+    post:
+      operationId: books_create
+      tags:
+      - books
+  /api/books/{id}/:
+    delete:
+      operationId: books_delete
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this book.
+          title: ID
+          type: integer
+      tags:
+      - books
+    get:
+      operationId: books_read
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this book.
+          title: ID
+          type: integer
+      tags:
+      - books
+    patch:
+      operationId: books_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this book.
+          title: ID
+          type: integer
+      tags:
+      - books
+    put:
+      operationId: books_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this book.
+          title: ID
+          type: integer
+      tags:
+      - books
+servers:
+- url: ''
